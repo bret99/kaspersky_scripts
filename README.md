@@ -1,6 +1,5 @@
 # Kaspersky Security Center Incident Response Script Kit (KSC-IRKit)
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/username/ksc-irkit/lint.yml?branch=main&style=flat-square)](https://github.com/username/ksc-irkit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Platform Support](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue?style=flat-square)](https://github.com/username/ksc-irkit)
 
