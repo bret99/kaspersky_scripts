@@ -25,9 +25,11 @@ Before deploying the tasks via KSC, ensure the following configurations are esta
 
 1. **API Key:** A valid `ip2geolocation` API key is required for network triage modules.
 2. **SMTP Credentials:** Valid credentials for your internal or secure exfiltration email server:
-   * `EMAIL_FROM`: Sender address.
-   * `EMAIL_FROM_PASS`: Sender authorization key/password.
-   * `EMAIL_TO`: Target SOC / Security Analyst mailbox.
+   * `EMAIL_FROM/Sender`: Sender address.
+   * `EMAIL_FROM_PASS/PasswordPlain`: Sender authorization key/password.
+   * `EMAIL_TO/Recipient`: Target SOC / Security Analyst mailbox.
+   * `FileExtension`: Files extension to get.
+   * `SourceDir`: Directory of files extension to get.
 
 ---
 
@@ -36,13 +38,14 @@ Before deploying the tasks via KSC, ensure the following configurations are esta
 The toolkit uses a strict, predictable naming convention:
 * `gug*` / `gbh*` — Geolocation & Network Triage Utilities
 * `guf*` — File System State Observers (JSON Output)
+* `gufe*` — Files Getter (Archive Output)
 * `gusa*` — Persistence & Auto-start Analysts
 
 | Platform | Module Prefix | Script Extension | Launch Wrapper | Target OS |
 | :--- | :--- | :--- | :--- | :--- |
-| **Windows** | `gugw` / `gufw` / `gusa` | `.ps1` | `.bat` | Windows Client/Server |
-| **Linux** | `gugl` / `gufl` / `gusal` | `.sh` | `.sh` | Ubuntu, RHEL, CentOS, etc. |
-| **macOS** | `gbhm` | `.sh` | `.sh` | macOS |
+| **Windows** | `gugw` / `gufw` / `gusaw` /`gufew` | `.ps1` | `.bat` | Windows Client/Server |
+| **Linux** | `gugl` / `gbhl` | `.sh` | `.sh` | Ubuntu, RHEL, CentOS, etc. |
+| **macOS** | `gbhm` / `gbhm`| `.sh` | `.sh` | macOS |
 
 ---
 
@@ -66,7 +69,7 @@ To ensure PowerShell execution policies do not block remote execution, always le
 1. Create a **Run script** task targeting Unix managed hosts.
 2. Ensure execution bits are set if deploying manually, or allow KSC to invoke the shell interpreter directly:
    ```bash
-   chmod +x ./gugl.sh
+   chmod +x ./*.sh
    ./*.sh
    ```
 
@@ -78,7 +81,7 @@ Before packaging scripts for production, modify the configuration block inside t
 
 ```bash
 # Configuration block example inside the script
-export IP2GEOLOCATION_API_KEY="your_secure_api_key_here"
+export API="your_secure_api_key_here"
 export EMAIL_FROM="soc-alerts@enterprise.com"
 export EMAIL_FROM_PASS="ComplexSecurePassword123!"
 export EMAIL_TO="ir-triage@enterprise.com"
