@@ -12,7 +12,7 @@ An Enterprise-grade suite of optimized Incident Response (IR) and forensic colle
 When a security incident occurs, speed and consistency of triage data collection are critical. `KSC-IRKit` bridges the gap between central endpoint management and forensic analysis:
 
 * **Unified KSC Delivery:** Fully structured wrappers (`.bat` for Windows hosts, `.sh` for Unix/macOS) designed to bypass execution policies and comply with KSC task execution parameters.
-* **Geolocation Intelligence:** Instant mapping of compromised assets using IP-to-Geolocation APIs (`gug*` / `gbh*` modules).
+* **Geolocation Intelligence:** Instant mapping of compromised assets using IP-to-Geolocation APIs (`gug*` modules).
 * **Forensic Auditing:** Deep-dive file system indexing and metadata parsing into structured JSON reports (`guf*` modules).
 * **Persistence Mechanism Extraction:** Comprehensive automated auditing of Windows Task Scheduler, Autoruns, and Unix Cron jobs (`gusa*` modules).
 * **Automated Exfiltration:** Direct, secure data exfiltration via pre-configured SMTP protocols straight to the SOC mailbox.
