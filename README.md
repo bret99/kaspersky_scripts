@@ -12,9 +12,10 @@ An Enterprise-grade suite of optimized Incident Response (IR) and forensic colle
 When a security incident occurs, speed and consistency of triage data collection are critical. `KSC-IRKit` bridges the gap between central endpoint management and forensic analysis:
 
 * **Unified KSC Delivery:** Fully structured wrappers (`.bat` for Windows hosts, `.sh` for Unix/macOS) designed to bypass execution policies and comply with KSC task execution parameters.
+* **Endpoint Hardening & Data Protection:** Automated enforcement of enterprise compliance policies, including remote BitLocker drive encryption activation and secure recovery key management via centralized execution.
 * **Geolocation Intelligence:** Instant mapping of compromised assets using IP-to-Geolocation APIs (`gug*` modules).
 * **Forensic Auditing:** Deep-dive file system indexing and metadata parsing into structured JSON reports (`guf*` modules).
-* **Persistence Mechanism Extraction:** Comprehensive automated auditing of Windows Task Scheduler, Autoruns, and Unix Cron jobs (`gusa*` modules).
+* **Persistence Mechanism Extraction:** Comprehensive automated auditing of Windows Task Scheduler, Autoruns (`gusa*` modules).
 * **Automated Exfiltration:** Direct, secure data exfiltration via pre-configured SMTP protocols straight to the SOC mailbox.
 
 ---
@@ -40,10 +41,11 @@ The toolkit uses a strict, predictable naming convention:
 * `guf*` — File System State Observers (JSON Output)
 * `gufe*` — Files Getter (Archive Output)
 * `gusa*` — Persistence & Auto-start Analysts
+* `bitlocker_activate*` - Endpoint Hardening & Data Protection
 
 | Platform | Module Prefix | Script Extension | Launch Wrapper | Target OS |
 | :--- | :--- | :--- | :--- | :--- |
-| **Windows** | `gugw` / `gufw` / `gusaw` /`gufew` | `.ps1` | `.bat` | Windows Client/Server |
+| **Windows** | `gugw` / `gufw` / `gusaw` /`gufew` / `bitlocker_activate`| `.ps1` | `.bat` | Windows Client/Server |
 | **Linux** | `gugl` / `gbhl` | `.sh` | `.sh` | Ubuntu, RHEL, CentOS, etc. |
 | **macOS** | `gbhm` / `gbhm`| `.sh` | `.sh` | macOS |
 
